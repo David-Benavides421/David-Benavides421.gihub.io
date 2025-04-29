@@ -1,0 +1,76 @@
+/* Reset básico y estilos del body/container */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #F5E8DC; /* Color de fondo del video */
+    font-family: 'cursive', sans-serif; /* Fuente alternativa */
+    color: #5C4033; /* Color de texto del video */
+    font-size: 20px; /* Tamaño de fuente base del video */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: auto; /* Como en el video */
+    text-align: center;
+}
+
+.container {
+    padding: 20px;
+    max-width: 600px; /* Limita el ancho para mejor lectura */
+}
+
+/* Estilo para el corazón (puedes reemplazarlo con tu árbol/animación) */
+.heart-visual {
+    font-size: 60px; /* Tamaño del corazón */
+    color: #e00; /* Color rojo */
+    margin-bottom: 30px;
+    /* Animación simple opcional */
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+
+/* Área de mensajes */
+#message-area {
+    margin-bottom: 40px; /* Espacio entre mensaje y timer */
+    min-height: 150px; /* Espacio para que quepa el texto */
+}
+
+#message {
+    white-space: pre-wrap; /* Respeta saltos de línea y espacios */
+}
+
+/* Cursor de tipeo */
+#message::after {
+    content: '_';
+    display: inline-block;
+    animation: blink 0.7s infinite;
+    margin-left: 2px; /* Pequeño espacio antes del cursor */
+}
+
+/* Ocultar cursor cuando el tipeo termine (controlado por JS) */
+#message.typing-done::after {
+    display: none;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+
+/* Área del contador */
+#timer-area {
+    font-size: 0.9em; /* Un poco más pequeño */
+    color: #7a5c4f; /* Un tono ligeramente diferente */
+}
+
+#timer {
+    font-weight: bold;
+    margin-top: 5px;
+}
